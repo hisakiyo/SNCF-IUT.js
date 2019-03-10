@@ -10,7 +10,6 @@ var request = require('request'),
 const name = "Hisakiyo";
 const tempsAvantTrain = 10; // en minute
 const tempsApresTrain = 35; // en minute
-const delaiAttente = 15; // delai max à attendre
 const delaiLeverDepart = 60; // en minute
 const dureeTrajet = 40;
 const urlCalendar = "https://edt.univ-littoral.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?data=8241fc38732002143ffcc28a30e8c25ae0fa50826f0818afd07cb68a5f59ac56906f45af276f59aec18424f8595af9f973866adc6bb17503"; // lien vers le fichier iCalendar
@@ -45,7 +44,7 @@ https.get(urlCalendar, (resp) => {
       console.log("Pas de cours aujourd'hui :)")
     } else {
       // formatage de la date grace à moment.js
-      var isoDateTo = moment(( todaysDate.slice(6,8) +"/"+todaysDate.slice(4,6)+"/"+todaysDate.slice(0,4) + " " + max.slice(0,2)+":"+max.slice(2,4) ),'DD/MM/YYYY hh:mm:ss').add(utc,'hour').subtract(tempsApresTrain+dureeTrajet+delaiAttente,'minute').format('YYYYMMDD[T]HHmmss');
+      var isoDateTo = moment(( todaysDate.slice(6,8) +"/"+todaysDate.slice(4,6)+"/"+todaysDate.slice(0,4) + " " + max.slice(0,2)+":"+max.slice(2,4) ),'DD/MM/YYYY hh:mm:ss').add(utc,'hour').subtract(tempsApresTrain+dureeTrajet+tempsAvantTrain,'minute').format('YYYYMMDD[T]HHmmss');
 
       console.log("DEBUG -- à la gare à minimum " + isoDateTo);
       request(
