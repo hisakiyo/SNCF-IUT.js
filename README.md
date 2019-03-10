@@ -1,4 +1,4 @@
-<h3>Installation</h3>
+<h2>Installation</h2>
 
 Installez node.js (dépends de la distribution)
 ```bash
@@ -11,7 +11,7 @@ Puis installez les dépendances requises
 npm install ical2json dateformat moment request
 ```
 
-<h3>Utilisation</h3>
+<h2>Utilisation</h2>
 Lancez le script node avec :
 ```bash
 node sncf-iut.js
