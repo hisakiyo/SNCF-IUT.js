@@ -14,8 +14,7 @@ const delaiAttente = 15; // delai max à attendre
 const delaiLeverDepart = 60; // en minute
 const dureeTrajet = 40;
 const urlCalendar = "https://edt.univ-littoral.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?data=8241fc38732002143ffcc28a30e8c25ae0fa50826f0818afd07cb68a5f59ac56906f45af276f59aec18424f8595af9f973866adc6bb17503"; // lien vers le fichier iCalendar
-//const todaysDate = dateFormat(new Date(), "yyyymmdd");
-const todaysDate = "20190311";
+const todaysDate = dateFormat(new Date(), "yyyymmdd");
 const utcTime = 1 *100; // remplacer le +1 par votre utc
 const utc = 1;
 
